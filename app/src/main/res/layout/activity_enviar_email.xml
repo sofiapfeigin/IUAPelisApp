@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/w"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IKIPELIS"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp">
+
+        </TextView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+
+        <ImageButton
+            android:layout_margin="1dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="#272626"
+            android:src="@drawable/casa"
+            android:onClick="menuPrincipal"
+            android:tint="@color/colorPrimary">
+
+        </ImageButton>
+
+        <ImageButton
+            android:layout_margin="1dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="#272626"
+            android:src="@drawable/estrella"
+            android:tint="@color/colorPrimary"
+            android:onClick="favoritos">
+
+        </ImageButton>
+
+        <ImageButton
+            android:layout_margin="1dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="#272626"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/email__1_"
+            android:onClick="enviarEmail">
+        </ImageButton>
+
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_margin="1dp"
+            android:background="#272626"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/equipo__1_"
+            android:onClick="editarUsuario"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="1dp"
+            android:background="#272626"
+            android:text="ver categorias"
+            android:onClick="categorias"
+            android:textColor="@color/colorPrimary" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reportar un problema"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF">
+
+        </TextView>
+
+        <TextView
+            android:layout_margin="10dp"
+            android:id="@+id/texto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Tienes algun problema?            ¡Comunicate con nosotros!"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_below="@id/titulo"
+            android:textColor="#FFFFFF">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/mensaje"
+            android:layout_margin="10dp"
+            android:layout_width="306dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/texto"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#FFFFFF"
+            >
+
+        </EditText>
+
+        <Button
+            android:id="@+id/enviarEmail"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:text="Enviar"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp"
+            android:onClick="menuPrincipal"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_below="@id/mensaje"
+            />
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

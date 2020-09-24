@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.iua.sofiaperezfeigin">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SplashActivity"></activity>
+        <activity android:name=".CategoriasActivity" />
+        <activity android:name=".FavoritosActivity" />
+        <activity android:name=".EditarUsuarioActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +23,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".IniciarSesionActivity"
+            android:label="Iniciar Sesion" />
+        <activity
+            android:name=".CrearCuentaActivity"
+            android:label="Crear Cuenta" />
+        <activity
+            android:name=".MenuPrincipalActivity"
+            android:label="Inicio" />
+        <activity
+            android:name=".DetallePeliculaActivity"
+            android:label="Detalle" />
+        <activity
+            android:name=".EnviarEmailActivity"
+            android:label="Contacto" />
     </application>
 
 </manifest>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/w"
+
+
+            />
+
+        <TextView
+            android:id="@+id/wikipelis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IKIPELIS"
+            android:textColor="#FFFFFF"
+            android:textSize="50dp">
+
+        </TextView>
+
+    </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/LinearLayout1"
+       android:layout_centerVertical="true"
+       android:layout_centerHorizontal="true">
+       <TextView
+           android:id="@+id/usuario"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="HOLA"
+           android:textColor="#FFFFFF"
+           android:textSize="30dp">
+
+       </TextView>
+
+   </LinearLayout>
+
+
+</RelativeLayout>

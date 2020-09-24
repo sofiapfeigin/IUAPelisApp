@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/w"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IKIPELIS"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp">
+
+        </TextView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+
+        <ImageButton
+            android:layout_margin="1dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="#272626"
+            android:src="@drawable/casa"
+            android:onClick="menuPrincipal"
+            android:tint="@color/colorPrimary">
+
+        </ImageButton>
+
+        <ImageButton
+            android:layout_margin="1dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="#272626"
+            android:src="@drawable/estrella"
+            android:tint="@color/colorPrimary"
+            android:onClick="favoritos">
+
+        </ImageButton>
+
+        <ImageButton
+            android:layout_margin="1dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="#272626"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/email__1_"
+            android:onClick="enviarEmail">
+        </ImageButton>
+
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_margin="1dp"
+            android:background="#272626"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/equipo__1_"
+            android:onClick="editarUsuario"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="1dp"
+            android:background="#272626"
+            android:text="ver categorias"
+            android:onClick="categorias"
+            android:textColor="@color/colorPrimary" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp">
+
+        <ImageView
+            android:id="@+id/fotoPelicula"
+            android:layout_width="150dp"
+            android:layout_height="230dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/vengadores">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/fotoPelicula"
+            android:text="Tras los sucesos de “Vengadores: Infinity War”, los superhéroes que sobrevivieron a Thanos se reunen para poner en práctica un plan definitivo que podría acabar con el villano definitivamente.
+            No saben si funcionará, pero es su única oportunidad de intentarlo. Cuarta entrega de la saga “Vengadores”"
+            android:textColor="#FFFFFF">
+
+        </TextView>
+
+        <ImageButton
+            android:id="@+id/fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descripcion"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@id/fotoPelicula"
+            android:background="#00FFEB3B"
+            android:text="agregar a favoritos"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar a favoritos"
+            android:layout_toRightOf="@id/fav"
+
+            android:layout_alignBottom="@id/fav"
+            android:textColor="#FFEB3B"
+            >
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="ver pelicula"
+        android:background="@color/colorPrimary"/>
+
+=
+
+
+</LinearLayout>

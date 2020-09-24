@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">SofiaPerezFeigin</string>
+    <string name="Password">Ingrese su contraseña</string>
+    <string name="Password2">Repita su contraseña</string>
+    <string name="Email">Ingrese su email</string>
+
+    <string name="PasswordNueva">Ingrese su nueva contraseña</string>
+    <string name="PasswordNueva2">Repita su nueva contraseña</string>
+
+
+    <string name="item1">Item 1</string>
+
+
 </resources>
