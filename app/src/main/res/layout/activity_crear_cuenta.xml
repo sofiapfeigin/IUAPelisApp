@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CREAR CUENTA"
-            android:textAlignment="center"
+            android:gravity="center"
             android:textColor="#FFFFFF"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"

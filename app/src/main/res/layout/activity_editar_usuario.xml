@@ -98,7 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Actualizar mi información"
-            android:textAlignment="center"
+            android:gravity="center"
             android:textSize="20dp"
             android:background="@color/colorPrimary"
             android:textColor="#FFFFFF">
