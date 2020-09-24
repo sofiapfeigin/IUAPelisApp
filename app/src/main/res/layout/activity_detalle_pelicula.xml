@@ -107,8 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_toRightOf="@id/fotoPelicula"
-            android:text="Tras los sucesos de “Vengadores: Infinity War”, los superhéroes que sobrevivieron a Thanos se reunen para poner en práctica un plan definitivo que podría acabar con el villano definitivamente.
-            No saben si funcionará, pero es su única oportunidad de intentarlo. Cuarta entrega de la saga “Vengadores”"
+            android:text="@string/descripcion"
             android:textColor="#FFFFFF">
 
         </TextView>
