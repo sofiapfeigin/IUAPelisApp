@@ -44,6 +44,10 @@ public class FavoritosActivity extends AppCompatActivity {
         Intent intent = new Intent(FavoritosActivity.this,  CategoriasActivity.class);
         startActivity(intent);
     }
+    public void verPelicula(View view){
+        Intent intent = new Intent(FavoritosActivity.this,  DetallePeliculaActivity.class);
+        startActivity(intent);
+    }
 
     private ArrayList<Pelicula> initPelicula() {
         ArrayList<Pelicula> peliculas = new ArrayList<>();
