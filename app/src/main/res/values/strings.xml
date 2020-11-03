@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">SofiaPerezFeigin</string>
+    <string name="app_name">Wikipelis</string>
     <string name="Password">Ingrese su contraseña</string>
     <string name="Password2">Repita su contraseña</string>
     <string name="Email">Ingrese su email</string>
-
+    <string name="Usuario">Ingrese su nombre de usuario</string>
     <string name="PasswordNueva">Ingrese su nueva contraseña</string>
     <string name="PasswordNueva2">Repita su nueva contraseña</string>
     <string name="descripcion">Tras los sucesos de “Vengadores: Infinity War”, los superhéroes que sobrevivieron a Thanos se reunen para poner en práctica un plan definitivo que podría acabar con el villano definitivamente.

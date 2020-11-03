@@ -7,23 +7,17 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/w"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"
+        <activity android:name=".activity.SplashActivity"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".CategoriasActivity"
+        <activity android:name=".activity.CategoriasActivity"
             android:label="Categorias"
             android:screenOrientation="portrait"/>
-        <activity android:name=".FavoritosActivity"
-            android:label="Favoritos"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".EditarUsuarioActivity"
-            android:label="Configuracion"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,24 +26,16 @@
 
         </activity>
         <activity
-            android:name=".IniciarSesionActivity"
+            android:name=".activity.IniciarSesionActivity"
             android:label="Iniciar Sesion"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".CrearCuentaActivity"
+            android:name=".activity.CrearCuentaActivity"
             android:label="Crear Cuenta"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".MenuPrincipalActivity"
+            android:name=".activity.MenuPrincipalActivity"
             android:label="Inicio"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".DetallePeliculaActivity"
-            android:label="Detalle"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".EnviarEmailActivity"
-            android:label="Contacto"
             android:screenOrientation="portrait"/>
     </application>
 

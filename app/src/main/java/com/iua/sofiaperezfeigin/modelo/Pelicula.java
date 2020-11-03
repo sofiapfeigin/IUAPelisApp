@@ -1,4 +1,4 @@
-package com.iua.sofiaperezfeigin;
+package com.iua.sofiaperezfeigin.modelo;
 
 public class Pelicula {
 

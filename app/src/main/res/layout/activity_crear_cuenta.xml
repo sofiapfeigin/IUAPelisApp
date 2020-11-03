@@ -39,10 +39,27 @@
             android:layout_margin="10dp"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="@id/editTextTextPassword"
+            app:layout_constraintBottom_toBottomOf="@id/editTextUser"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/textView" />
+
+        <EditText
+            android:id="@+id/editTextUser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/Usuario"
+            android:inputType="textEmailAddress"
+            android:layout_margin="10dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/editTextTextPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/editTextTextEmailAddress4" />
+
+
 
         <EditText
             android:id="@+id/editTextTextPassword"
@@ -59,7 +76,7 @@
             app:layout_constraintBottom_toBottomOf="@id/editTextTextPassword2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/editTextTextEmailAddress4" />
+            app:layout_constraintTop_toTopOf="@id/editTextUser" />
 
         <EditText
             android:id="@+id/editTextTextPassword2"
@@ -86,7 +103,6 @@
             android:text="CREAR CUENTA"
             android:textColor="#FFFFFF"
             android:textSize="16dp"
-            android:onClick="mainActivity"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

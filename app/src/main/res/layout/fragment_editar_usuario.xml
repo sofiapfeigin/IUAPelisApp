@@ -1,92 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".fragments.EditarUsuarioFragment"
     android:background="#000000">
 
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            app:srcCompat="@drawable/w"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="IKIPELIS"
-            android:textColor="#FFFFFF"
-            android:textSize="30dp">
-
-        </TextView>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-
-
-        <ImageButton
-            android:layout_margin="1dp"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:background="#272626"
-            android:onClick="menuPrincipal"
-            android:src="@drawable/casa"
-            android:tint="@color/colorPrimary">
-
-        </ImageButton>
-
-        <ImageButton
-            android:layout_margin="1dp"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:background="#272626"
-            android:src="@drawable/estrella"
-            android:tint="@color/colorPrimary"
-            android:onClick="favoritos">
-
-        </ImageButton>
-
-        <ImageButton
-            android:layout_margin="1dp"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:background="#272626"
-            android:tint="@color/colorPrimary"
-            app:srcCompat="@drawable/email__1_"
-            android:onClick="enviarEmail">
-        </ImageButton>
-
-        <ImageButton
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_margin="1dp"
-            android:background="#272626"
-            android:tint="@color/colorPrimary"
-            app:srcCompat="@drawable/equipo__1_"
-            android:onClick="editarUsuario"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_margin="1dp"
-            android:background="#272626"
-            android:text="ver categorias"
-            android:onClick="categorias"
-            android:textColor="@color/colorPrimary" />
-
-
-    </LinearLayout>
-
+    <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -117,6 +37,17 @@
             android:layout_below="@id/texto"
             android:textColorHint="#FFFFFF" />
         <EditText
+            android:id="@+id/editTextUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/Email"
+            android:inputType="textEmailAddress"
+            android:layout_margin="10dp"
+            android:textColor="#FFFFFF"
+            android:layout_below="@id/editTextTextEmailAddress4"
+            android:textColorHint="#FFFFFF" />
+        <EditText
             android:id="@+id/editTextTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -128,8 +59,8 @@
             android:textColorHint="#FFFFFF"
             android:textColorLink="#FFFFFF"
             android:layout_margin="10dp"
-            android:layout_below="@id/editTextTextEmailAddress4"
-             />
+            android:layout_below="@id/editTextUser"
+            />
 
 
         <EditText
@@ -157,7 +88,6 @@
             android:text="Guardar cambios"
             android:textColor="#FFFFFF"
             android:textSize="16dp"
-            android:onClick="menuPrincipal"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_below="@id/editTextTextPassword2"
@@ -165,7 +95,4 @@
     </RelativeLayout>
 
 
-
-
-
-</LinearLayout>
+</FrameLayout>

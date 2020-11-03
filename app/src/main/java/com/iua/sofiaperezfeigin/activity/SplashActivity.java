@@ -1,4 +1,4 @@
-package com.iua.sofiaperezfeigin;
+package com.iua.sofiaperezfeigin.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.os.Handler;
 import android.widget.TextView;
+
+import com.iua.sofiaperezfeigin.R;
 
 public class SplashActivity extends AppCompatActivity {
 

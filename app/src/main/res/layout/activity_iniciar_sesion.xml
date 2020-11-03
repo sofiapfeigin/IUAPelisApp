@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:hint="@string/Email"
+            android:hint="@string/Usuario"
             android:layout_margin="10dp"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
@@ -56,14 +56,14 @@
             android:textColorHighlight="#FFFFFF"
             android:textColorHint="#FFFFFF"
             android:textColorLink="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="@id/crearCuenta"
+            app:layout_constraintBottom_toBottomOf="@id/iniciarSesion"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/email"
             android:hint="@string/Password" />
         <Button
-            android:id="@+id/crearCuenta"
+            android:id="@+id/iniciarSesion"
             android:layout_width="160dp"
             android:layout_height="40dp"
             android:background="@color/colorPrimary"
@@ -73,7 +73,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:onClick="splashActivity"
             app:layout_constraintTop_toTopOf="@id/editTextTextPassword" />
 
 
