@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_toRightOf="@id/fotoPelicula"
-                android:text="@string/descripcion"
+                android:text="@string/descripcionVengadores"
                 android:textColor="#FFFFFF">
 
             </TextView>
@@ -38,28 +38,15 @@
                 android:layout_toRightOf="@id/fotoPelicula"
                 >
 
-                <ImageButton
-                    android:id="@+id/fav"
+                <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center"
-                    android:background="#000000"
-                    android:text="agregar a favoritos"
-                    android:tint="@color/colorPrimary"
-                    android:src="@drawable/contorno_en_forma_de_corazon" />
+                    android:layout_height="25dp"
+                    android:text="Añadir a favoritos"
+                    android:background="#FFC107"
+                    android:layout_margin="10dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Agregar a favoritos"
-                    android:layout_centerInParent="true"
-                    android:layout_toRightOf="@id/fav"
-                    android:layout_margin="10px"
-                    android:textColor="@color/colorPrimary"
-                    >
+                </Button>
 
-                </TextView>
 
             </RelativeLayout>
 

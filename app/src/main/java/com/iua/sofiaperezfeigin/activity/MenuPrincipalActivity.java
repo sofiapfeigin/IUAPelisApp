@@ -37,13 +37,14 @@ public class MenuPrincipalActivity extends AppCompatActivity
         fragmentPrincipal=new MenuPrincipalFragment();
         fragmentFavoritos= new FavoritosFragment();
         fragmentEnviarEmail= new EnviarEmailFragment();
+        fragmentDetallePelicula= new DetallePeliculaFragment();
 
         getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragment, fragmentPrincipal).commit();
         transaction = getSupportFragmentManager().beginTransaction();
         findViewById(R.id.editarUsuario).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.contenedorFragment,fragmentEditarUsuario);
                 transaction.addToBackStack(null);
                 transaction.commit();
@@ -54,7 +55,7 @@ public class MenuPrincipalActivity extends AppCompatActivity
         findViewById(R.id.home).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.contenedorFragment, fragmentPrincipal);
                 transaction.addToBackStack(null);
                 transaction.commit();
@@ -63,8 +64,9 @@ public class MenuPrincipalActivity extends AppCompatActivity
         findViewById(R.id.fav).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.contenedorFragment,fragmentFavoritos);
+                transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
@@ -72,8 +74,19 @@ public class MenuPrincipalActivity extends AppCompatActivity
         findViewById(R.id.email).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.contenedorFragment,fragmentEnviarEmail);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        findViewById(R.id.email).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.contenedorFragment,fragmentEnviarEmail);
+                transaction.addToBackStack(null);
                 transaction.commit();
             }
         });

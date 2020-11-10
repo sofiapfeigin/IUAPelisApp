@@ -1,4 +1,4 @@
-package com.iua.sofiaperezfeigin.activity;
+/*package com.iua.sofiaperezfeigin.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -77,4 +77,4 @@ public class CategoriasActivity extends AppCompatActivity {
 
         return peliculas;
     }
-}
+}*/

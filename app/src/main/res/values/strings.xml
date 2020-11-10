@@ -6,9 +6,15 @@
     <string name="Usuario">Ingrese su nombre de usuario</string>
     <string name="PasswordNueva">Ingrese su nueva contraseña</string>
     <string name="PasswordNueva2">Repita su nueva contraseña</string>
-    <string name="descripcion">Tras los sucesos de “Vengadores: Infinity War”, los superhéroes que sobrevivieron a Thanos se reunen para poner en práctica un plan definitivo que podría acabar con el villano definitivamente.
+    <string name="descripcionVengadores">Tras los sucesos de “Vengadores: Infinity War”, los superhéroes que sobrevivieron a Thanos se reunen para poner en práctica un plan definitivo que podría acabar con el villano definitivamente.
             No saben si funcionará, pero es su única oportunidad de intentarlo. Cuarta entrega de la saga “Vengadores</string>
-
+    <string name="descripcionCisne"> Una bailarina empieza a perder el frágil sentido de la realidad cuando una compañera recién llegada amenaza con usurpar su posición en el papel principal de "El lago de los cisnes".
+   </string>
+    <string name="descripcionAlien"> La saga de Alien es una saga cinematográfica de ciencia ficción y terror que relata la historia de la teniente Ellen Ripley (protagonizada por Sigourney Weaver) y su lucha contra una forma de vida alienígena, conocida simplemente como «el alien» o xenomorfo.</string>
+    <string name="descripcionRobin">Robin es un bandolero, quien roba a los ricos para dárselo a los pobres. Vive en el Bosque de Sherwood junto con su compañero Little John. Él fue el antiguo novio de Lady Marian hace años, y aunque haya pasado el tiempo, se siguen amando.</string>
+    <string name="descripcionCapitana"> Una guerrera extraterrestre de la civilización Kree se encuentra atrapada en medio de una batalla. Con la ayuda de Nick Fury trata de descubrir los secretos de su pasado mientras aprovecha sus poderes para terminar la guerra.</string>
+    <string name="descripcion1917"> Durante la Primera Guerra Mundial, dos jóvenes soldados británicos reciben una orden, aparentemente, imposible de ejecutar: en una carrera contra el reloj, deben infiltrarse en territorio enemigo para entregar un mensaje que podría salvar a miles de compañeros.</string>
+    <string name="descripcionGuason">Joker —a veces traducido como Guasón o Comodín—​ es un personaje creado por Bill Finger, Bob Kane y Jerry Robinson, ​​​ e introducido en el primer ejemplar del comic book Batman, en abril de 1940, publicado por DC Comics.​​</string>
     <string name="item1">Item 1</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
