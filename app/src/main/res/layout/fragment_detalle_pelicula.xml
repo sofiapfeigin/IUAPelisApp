@@ -62,18 +62,15 @@
 
                 </TextView>
 
-
-
-
-
             </RelativeLayout>
-        <Button
+                 <Button
             android:id="@+id/button3"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_below="@id/fotoPelicula"
-            android:background="@color/colorPrimary"
+            android:background="#000000"
+            android:textColor="@color/colorPrimary"
             android:gravity="center"
             android:layout_centerVertical="true"
             android:layout_margin="50dp"
