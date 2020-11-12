@@ -8,9 +8,11 @@ import android.widget.TextView;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.iua.sofiaperezfeigin.fragments.DetallePeliculaFragment;
 import com.iua.sofiaperezfeigin.modelo.Pelicula;
 
 import java.util.ArrayList;
@@ -35,13 +37,24 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.PalleteViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PalleteViewHolder palleteViewHolder, int i) {
+    public void onBindViewHolder(@NonNull PalleteViewHolder palleteViewHolder,final int i) {
         Pelicula pelicula = data.get(i);
         palleteViewHolder.getTitleTextView().setText(pelicula.getNombre());
 
         Glide.with(context).
                 load(pelicula.getFoto()).
                 fitCenter().into(palleteViewHolder.getImageView());
+
+        palleteViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                DetallePeliculaFragment detailFragment = new DetallePeliculaFragment();
+                detailFragment.putExtra(data.get(i));
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragment,detailFragment).addToBackStack(null).commit();
+            }
+        });
 
 
     }

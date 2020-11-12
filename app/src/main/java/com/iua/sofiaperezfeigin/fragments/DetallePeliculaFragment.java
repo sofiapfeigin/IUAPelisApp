@@ -1,5 +1,6 @@
 package com.iua.sofiaperezfeigin.fragments;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.iua.sofiaperezfeigin.R;
+import com.iua.sofiaperezfeigin.modelo.Pelicula;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +21,11 @@ import com.iua.sofiaperezfeigin.R;
  * create an instance of this fragment.
  */
 public class DetallePeliculaFragment extends Fragment {
+
+    ImageView imageMovie;
+    TextView textView;
+    Pelicula pelicula;
+    
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,8 +70,29 @@ public class DetallePeliculaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detalle_pelicula, container, false);
+        View vista = inflater.inflate(R.layout.fragment_detalle_pelicula, container, false);
+
+        imageMovie = vista.findViewById(R.id.fotoPelicula);
+        textView = vista.findViewById(R.id.descripcion);
+        
+        initValues();
+        return vista;
+    }
+
+    private void initValues() {
+        //imageMovie.setImageURI(Uri.parse(pelicula.getFoto()));
+
+        textView.setText(pelicula.getDescr());
+        Glide.with(getContext()).
+                load(pelicula.getFoto()).
+                fitCenter().into(imageMovie);
+
+
+
+
+    }
+    public void putExtra(Pelicula peli) {
+        this.pelicula = peli;
     }
 
     public interface DetallePeliculaFragmentListener {

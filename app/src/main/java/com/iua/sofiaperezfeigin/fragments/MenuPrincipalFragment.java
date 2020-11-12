@@ -3,6 +3,7 @@ package com.iua.sofiaperezfeigin.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,19 +11,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.iua.sofiaperezfeigin.ClassConnection;
 import com.iua.sofiaperezfeigin.ListAdapter;
 import com.iua.sofiaperezfeigin.Persistencia.MyDataBase;
 import com.iua.sofiaperezfeigin.R;
 import com.iua.sofiaperezfeigin.modelo.Pelicula;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link MenuPrincipalFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MenuPrincipalFragment extends Fragment {
+public class MenuPrincipalFragment extends Fragment implements DetallePeliculaFragment.DetallePeliculaFragmentListener {
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,8 +45,15 @@ public class MenuPrincipalFragment extends Fragment {
     ArrayList<Pelicula> pelicula = new ArrayList<>();
     MyDataBase db;
 
+    JSONArray jsonArray;
+    String titulo, descripcion, path;
+    String uribase = "https://image.tmdb.org/t/p/original";
+    String uriCompleta;
+    ClassConnection connection = new ClassConnection();
+    String response=connection.execute("https://api.themoviedb.org/3/discover/movie?api_key=51627c98c07cad465df4ee480dfaf95e").get();
 
-    public MenuPrincipalFragment() {
+
+    public MenuPrincipalFragment() throws ExecutionException, InterruptedException {
         // Required empty public constructor
     }
 
@@ -51,7 +66,7 @@ public class MenuPrincipalFragment extends Fragment {
      * @return A new instance of fragment MenuPrincipalFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MenuPrincipalFragment newInstance(String param1, String param2) {
+    public static MenuPrincipalFragment newInstance(String param1, String param2) throws ExecutionException, InterruptedException {
         MenuPrincipalFragment fragment = new MenuPrincipalFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -67,19 +82,46 @@ public class MenuPrincipalFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("results");
+
+            System.out.println(jsonArray);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+    }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View vista = inflater.inflate(R.layout.fragment_menu_principal, container, false);
+
         pelicula=new ArrayList<>();
         recyclerView= vista.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+
+
         db=new MyDataBase(getContext());
 
-        cargarPeliculas();
+        /*
+
+        try {
+            llenarlista();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        */
+
+
+        //cargarPeliculas();
         pelicula=db.getPeliculas();
 
 
@@ -88,9 +130,23 @@ public class MenuPrincipalFragment extends Fragment {
         return vista;
     }
 
+    private void llenarlista() throws JSONException {
+
+        for (int i=0;i<20;i++)
+        {
+            titulo = jsonArray.getJSONObject(i).getString("title");
+            descripcion = jsonArray.getJSONObject(i).getString("overview");
+            path = jsonArray.getJSONObject(i).getString("poster_path");
+            uriCompleta = uribase + path;
+            db.addPelicula(new Pelicula(titulo, uriCompleta, descripcion));
+        }
+
+
+    }
+
     private void cargarPeliculas () {
 
-        db.addPelicula(new Pelicula("Los Vengadores", "https://http2.mlstatic.com/posters-cine-avengers-endgame-marvel-peliculas-45x30-cm-D_NQ_NP_634696-MLA30089346405_042019-F.jpg", "hola"));
+        db.addPelicula(new Pelicula("Los Vengadores", "https://http2.mlstatic.com/posters-cine-avengers-endgame-marvel-peliculas-45x30-cm-D_NQ_NP_634696-MLA30089346405_042019-F.jpg", getString(R.string.descripcionVengadores)));
         db.addPelicula(new Pelicula("Cisne Negro", "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/cisne-negro/7055592-1-esl-ES/CISNE-NEGRO.jpg?resize=480:*",getString(R.string.descripcionCisne)));
         db.addPelicula(new Pelicula("Alien", "https://i.pinimg.com/originals/fd/82/c1/fd82c1116eb734b625552241e00e2a20.png",getString(R.string.descripcionAlien)));
         db.addPelicula(new Pelicula("Robin Hood", "https://i.blogs.es/873d60/espinof-peores-posters-de-cine-2018-robin-hood/450_1000.jpg", getString(R.string.descripcionRobin)));
@@ -101,6 +157,8 @@ public class MenuPrincipalFragment extends Fragment {
 
     public interface MenuPrincipalFragmentListener {
     }
+
+
 
 
 }

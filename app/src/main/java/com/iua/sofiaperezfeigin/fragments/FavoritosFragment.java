@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.iua.sofiaperezfeigin.ListAdapter;
+import com.iua.sofiaperezfeigin.Persistencia.MyDataBase;
 import com.iua.sofiaperezfeigin.R;
 import com.iua.sofiaperezfeigin.modelo.Pelicula;
 
@@ -34,7 +35,7 @@ public class FavoritosFragment extends Fragment {
 
     RecyclerView recyclerView;
     ArrayList<Pelicula> pelicula = new ArrayList<>();
-
+    MyDataBase db;
 
     public FavoritosFragment() {
         // Required empty public constructor
@@ -76,22 +77,16 @@ public class FavoritosFragment extends Fragment {
         recyclerView= vista.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
 
-        pelicula=initPelicula();
+
+        db=new MyDataBase(getContext());
+
+        pelicula=db.getPeliculasFav();
+
 
 
         recyclerView.setAdapter(new ListAdapter(pelicula, getContext()));
 
         return vista;
-    }
-
-    private ArrayList<Pelicula> initPelicula() {
-        ArrayList<Pelicula> peliculas = new ArrayList<>();
-
-        peliculas.add(new Pelicula("Los Vengadores", "https://http2.mlstatic.com/posters-cine-avengers-endgame-marvel-peliculas-45x30-cm-D_NQ_NP_634696-MLA30089346405_042019-F.jpg",getString(R.string.descripcion1917)));
-        peliculas.add(new Pelicula("Cisne Negro", "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/cisne-negro/7055592-1-esl-ES/CISNE-NEGRO.jpg?resize=480:*", getString(R.string.descripcion1917)));
-        peliculas.add(new Pelicula("Alien", "https://i.pinimg.com/originals/fd/82/c1/fd82c1116eb734b625552241e00e2a20.png", getString(R.string.descripcion1917)));
-
-        return peliculas;
     }
 
     public interface FavoritosFragmentListener {

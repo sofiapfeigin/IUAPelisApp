@@ -9,7 +9,8 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="35dp">
+            android:layout_marginBottom="35dp"
+            android:id="@+id/rekative1">
 
             <ImageView
                 android:id="@+id/fotoPelicula"
@@ -38,30 +39,51 @@
                 android:layout_toRightOf="@id/fotoPelicula"
                 >
 
-                <Button
+                <ImageButton
+                    android:id="@+id/fav"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:text="Añadir a favoritos"
-                    android:background="#FFC107"
-                    android:layout_margin="10dp">
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:background="#000000"
+                    android:text="agregar a favoritos"
+                    android:tint="#D69C09"
+                    android:src="@drawable/estrella" />
 
-                </Button>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Agregar a favoritos"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@id/fav"
+                    android:layout_margin="10px"
+                    android:textColor="#D69C09"
+                    >
+
+                </TextView>
+
+
+
 
 
             </RelativeLayout>
-
-
-
-
-        </RelativeLayout>
-
         <Button
             android:id="@+id/button3"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="ver pelicula"
-            android:background="@color/colorPrimary"/>
+            android:layout_below="@id/fotoPelicula"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_margin="50dp"
+            android:layout_centerHorizontal="true"
+            android:text="ver pelicula" />
+
+        </RelativeLayout>
+
+
+
 
 
 

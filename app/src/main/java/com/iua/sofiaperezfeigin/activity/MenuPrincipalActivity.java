@@ -14,16 +14,17 @@ import com.iua.sofiaperezfeigin.fragments.EnviarEmailFragment;
 import com.iua.sofiaperezfeigin.fragments.FavoritosFragment;
 import com.iua.sofiaperezfeigin.fragments.MenuPrincipalFragment;
 
+import java.util.concurrent.ExecutionException;
+
 public class MenuPrincipalActivity extends AppCompatActivity
         implements MenuPrincipalFragment.MenuPrincipalFragmentListener, FavoritosFragment.FavoritosFragmentListener,
         EditarUsuarioFragment.EditarUsuarioFragmentListener, EnviarEmailFragment.EnviarEmailFragmentListener,
-        DetallePeliculaFragment.DetallePeliculaFragmentListener, CategoriasFragment.CategoriasFragmentListener {
+         CategoriasFragment.CategoriasFragmentListener {
 
     MenuPrincipalFragment fragmentPrincipal;
     FavoritosFragment fragmentFavoritos;
     EditarUsuarioFragment fragmentEditarUsuario;
     EnviarEmailFragment fragmentEnviarEmail;
-    DetallePeliculaFragment fragmentDetallePelicula;
     CategoriasFragment fragmentCategorias;
     FragmentTransaction transaction;
 
@@ -32,12 +33,16 @@ public class MenuPrincipalActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
 
-        fragmentPrincipal=new MenuPrincipalFragment();
+        try {
+            fragmentPrincipal=new MenuPrincipalFragment();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         fragmentEditarUsuario=new EditarUsuarioFragment();
-        fragmentPrincipal=new MenuPrincipalFragment();
         fragmentFavoritos= new FavoritosFragment();
         fragmentEnviarEmail= new EnviarEmailFragment();
-        fragmentDetallePelicula= new DetallePeliculaFragment();
 
         getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragment, fragmentPrincipal).commit();
         transaction = getSupportFragmentManager().beginTransaction();
@@ -90,6 +95,8 @@ public class MenuPrincipalActivity extends AppCompatActivity
                 transaction.commit();
             }
         });
+
+
 
 
     }

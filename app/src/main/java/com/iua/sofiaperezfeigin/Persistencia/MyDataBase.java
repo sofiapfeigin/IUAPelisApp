@@ -13,8 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyDataBase extends SQLiteOpenHelper {
+    private static MyDataBase databaseInstance;
+
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "prueba.db";
+    public static final String DATABASE_NAME = "peliculas.db";
     //Table Names
     private static final String TABLE_PELICULAS = "peliculas_table";
     //Mail Table Columns
@@ -22,6 +24,13 @@ public class MyDataBase extends SQLiteOpenHelper {
     private static final String KEY_PELICULA_NOMBRE = "pelicula_nombre";
     private static final String KEY_PELICULA_FOTO = "pelicula_foto";
     private static final String KEY_PELICULA_DESCR = "pelicula_descr";
+
+    public static synchronized MyDataBase getInstance(Context context) {
+        if (databaseInstance == null) {
+            databaseInstance = new MyDataBase(context);
+        }
+        return databaseInstance;
+    }
 
 
 
@@ -43,7 +52,8 @@ public class MyDataBase extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // SQL para actualizar las tablas
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PELICULAS);
+        onCreate(db);
     }
     public void addPelicula(Pelicula pelicula) {
         SQLiteDatabase database = this.getWritableDatabase();
@@ -55,20 +65,37 @@ public class MyDataBase extends SQLiteOpenHelper {
     }
 
     public ArrayList<Pelicula> getPeliculas() {
-        ArrayList<Pelicula> peliculas = null;
+        ArrayList<Pelicula> peliculas = new ArrayList<>();
         SQLiteDatabase database = this.getReadableDatabase();
-        String[] valores_recuperar = {"pelicula_nombre", "pelicula_foto", "pelicula_descr"};
+        String[] valores_recuperar = {KEY_PELICULA_NOMBRE, KEY_PELICULA_FOTO, KEY_PELICULA_DESCR};
         Cursor c = database.query(TABLE_PELICULAS, valores_recuperar, null, null, null, null, null, null);
         c.moveToFirst();
-            do {
+        do {
 
-                peliculas.add(new Pelicula(c.getString(1),
-                        c.getString(2),
-                        c.getString(3)));
+                peliculas.add(new Pelicula(c.getString(0),
+                        c.getString(1),
+                        c.getString(2)));
             }while (c.moveToNext());
             database.close();
             c.close();
 
+        return peliculas;
+    }
+
+    public ArrayList<Pelicula> getPeliculasFav() {
+        ArrayList<Pelicula> peliculas = new ArrayList<>();
+        SQLiteDatabase database = this.getReadableDatabase();
+        String[] valores_recuperar = {KEY_PELICULA_NOMBRE, KEY_PELICULA_FOTO, KEY_PELICULA_DESCR};
+        Cursor c = database.query(TABLE_PELICULAS, valores_recuperar, null, null, null, null, null, "3");
+        c.moveToFirst();
+        do {
+
+            peliculas.add(new Pelicula(c.getString(0),
+                    c.getString(1),
+                    c.getString(2)));
+        }while (c.moveToNext());
+        database.close();
+        c.close();
 
         return peliculas;
     }
