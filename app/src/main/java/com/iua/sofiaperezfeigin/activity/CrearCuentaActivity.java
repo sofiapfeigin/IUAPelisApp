@@ -39,6 +39,7 @@ public class CrearCuentaActivity extends AppCompatActivity {
                     editor.putString("email", email.getText().toString());
                     editor.putString("usuario", nombreUsuario.getText().toString());
                     editor.putString("contrasena", passwd1.getText().toString());
+                    editor.putString("recordar", "false");
 
                     editor.commit();
 

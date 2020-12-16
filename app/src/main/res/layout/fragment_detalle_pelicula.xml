@@ -1,86 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.DetallePeliculaFragment"
-    android:background="#000000">
+    android:background="#000000"
+    tools:context=".fragments.DetallePeliculaFragment">
 
     <RelativeLayout
+        android:id="@+id/rekative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp">
+
+        <ImageView
+            android:id="@+id/fotoPelicula"
+            android:layout_width="150dp"
+            android:layout_height="230dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/vengadores">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="35dp"
-            android:id="@+id/rekative1">
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/fotoPelicula"
+            android:text="@string/descripcionVengadores"
+            android:textColor="#FFFFFF">
 
-            <ImageView
-                android:id="@+id/fotoPelicula"
-                android:layout_width="150dp"
-                android:layout_height="230dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/vengadores">
+        </TextView>
 
-            </ImageView>
+    </RelativeLayout>
 
-            <TextView
-                android:id="@+id/descripcion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_toRightOf="@id/fotoPelicula"
-                android:text="@string/descripcionVengadores"
-                android:textColor="#FFFFFF">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
 
-            </TextView>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/descripcion"
-                android:layout_toRightOf="@id/fotoPelicula"
-                >
-
-                <ImageButton
-                    android:id="@+id/fav"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center"
-                    android:background="#000000"
-                    android:text="agregar a favoritos"
-                    android:tint="#D69C09"
-                    android:src="@drawable/estrella" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Agregar a favoritos"
-                    android:layout_centerInParent="true"
-                    android:layout_toRightOf="@id/fav"
-                    android:layout_margin="10px"
-                    android:textColor="#D69C09"
-                    >
-
-                </TextView>
-
-            </RelativeLayout>
-                 <Button
-            android:id="@+id/button3"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_below="@id/fotoPelicula"
+        <ImageButton
+            android:id="@+id/reproducir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/fav"
+            android:src="@drawable/boton_de_play"
+            android:text="agregar a favoritos"
             android:background="#000000"
-            android:textColor="@color/colorPrimary"
-            android:gravity="center"
-            android:layout_centerVertical="true"
-            android:layout_margin="50dp"
+            android:layout_margin="5dp"
+            android:tint="@color/colorPrimary" />
+
+
+        <ImageButton
+            android:id="@+id/fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="ver pelicula" />
+            android:src="@drawable/estrella"
+            android:text="agregar a favoritos"
+            android:background="#000000"
+            android:layout_margin="5dp"
+            android:tint="@color/colorPrimary" />
 
-        </RelativeLayout>
+        <ImageButton
+            android:id="@+id/compartir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/fav"
+            android:layout_margin="5dp"
+            android:src="@drawable/compartir__1_"
+            android:background="#000000"
+            android:tint="@color/colorPrimary" />
 
 
 
+
+    </RelativeLayout>
 
 
 

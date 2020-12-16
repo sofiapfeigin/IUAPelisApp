@@ -43,6 +43,8 @@ public class MenuPrincipalActivity extends AppCompatActivity
         fragmentEditarUsuario=new EditarUsuarioFragment();
         fragmentFavoritos= new FavoritosFragment();
         fragmentEnviarEmail= new EnviarEmailFragment();
+        fragmentCategorias= new CategoriasFragment();
+
 
         getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragment, fragmentPrincipal).commit();
         transaction = getSupportFragmentManager().beginTransaction();
@@ -86,11 +88,11 @@ public class MenuPrincipalActivity extends AppCompatActivity
             }
         });
 
-        findViewById(R.id.email).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.categorias).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.contenedorFragment,fragmentEnviarEmail);
+                transaction.replace(R.id.contenedorFragment,fragmentCategorias);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }

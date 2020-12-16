@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,6 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp">
+
+
             <TextView
                 android:id="@+id/texto"
                 android:layout_width="match_parent"
@@ -27,26 +30,39 @@
                 android:textColor="#FFFFFF">
 
             </TextView>
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/texto"
+                android:src="@drawable/lista__1_"
+                android:layout_margin="10dp"
+                app:tint="@color/colorPrimary" />
+
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView4"
+                android:text="ACCION"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:textSize="12dp"
+                android:textColor="@color/colorPrimary"/>
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/recyclerView"
-            android:scrollbars="vertical"
-            >
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/recyclerView2"
-                android:scrollbars="horizontal"
-                >
-
-            </androidx.recyclerview.widget.RecyclerView>
+            android:id="@+id/recyclerViewCat"
+            android:scrollbars="vertical">
 
 
         </androidx.recyclerview.widget.RecyclerView>
+
+
 
 
     </LinearLayout>

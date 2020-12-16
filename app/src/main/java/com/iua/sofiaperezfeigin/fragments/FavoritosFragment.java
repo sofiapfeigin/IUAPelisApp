@@ -81,9 +81,6 @@ public class FavoritosFragment extends Fragment {
         db=new MyDataBase(getContext());
 
         pelicula=db.getPeliculasFav();
-
-
-
         recyclerView.setAdapter(new ListAdapter(pelicula, getContext()));
 
         return vista;

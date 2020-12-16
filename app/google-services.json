@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "626769319913",
+    "project_id": "wikipelis-b1da2",
+    "storage_bucket": "wikipelis-b1da2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626769319913:android:f288999980a7a8be031d78",
+        "android_client_info": {
+          "package_name": "com.iua.sofiaperezfeigin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626769319913-am342rdsbbq23mm98qqdk43vqf07ga3l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iua.sofiaperezfeigin",
+            "certificate_hash": "c9e50f9ca7561537fd72033e28caffc6c1299d31"
+          }
+        },
+        {
+          "client_id": "626769319913-q89enqs7v5ib42nffpv690osujbh38cb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYwWVSDJpnTHli-mL1oooQfaJe20bNRaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "626769319913-q89enqs7v5ib42nffpv690osujbh38cb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

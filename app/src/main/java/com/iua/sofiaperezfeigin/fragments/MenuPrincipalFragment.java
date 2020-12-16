@@ -45,6 +45,7 @@ public class MenuPrincipalFragment extends Fragment implements DetallePeliculaFr
     ArrayList<Pelicula> pelicula = new ArrayList<>();
     MyDataBase db;
 
+    JSONObject jsonObject;
     JSONArray jsonArray;
     String titulo, descripcion, path;
     String uribase = "https://image.tmdb.org/t/p/original";
@@ -84,17 +85,13 @@ public class MenuPrincipalFragment extends Fragment implements DetallePeliculaFr
         }
 
         try {
-            JSONObject jsonObject = new JSONObject(response);
-            JSONArray jsonArray = jsonObject.getJSONArray("results");
-
-            System.out.println(jsonArray);
+            jsonObject = new JSONObject(response);
+            jsonArray = jsonObject.getJSONArray("results");
 
         } catch (JSONException e) {
             e.printStackTrace();
 
     }
-
-
     }
 
     @Override
@@ -111,20 +108,16 @@ public class MenuPrincipalFragment extends Fragment implements DetallePeliculaFr
 
         db=new MyDataBase(getContext());
 
-        /*
+
 
         try {
             llenarlista();
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        */
 
 
-        //cargarPeliculas();
         pelicula=db.getPeliculas();
-
-
         recyclerView.setAdapter(new ListAdapter(pelicula, getContext()));
 
         return vista;
@@ -138,21 +131,20 @@ public class MenuPrincipalFragment extends Fragment implements DetallePeliculaFr
             descripcion = jsonArray.getJSONObject(i).getString("overview");
             path = jsonArray.getJSONObject(i).getString("poster_path");
             uriCompleta = uribase + path;
-            db.addPelicula(new Pelicula(titulo, uriCompleta, descripcion));
+
+            if(db.getPelicula(titulo)==false){
+                if(i>=0&&i<10)
+                    db.addPelicula(new Pelicula(titulo, uriCompleta, descripcion, "false", "ACCION"));
+                if(i>=10&&i<15)
+                    db.addPelicula(new Pelicula(titulo, uriCompleta, descripcion, "true", "DRAMA"));
+                if(i>=15&&i<21)
+                    db.addPelicula(new Pelicula(titulo, uriCompleta, descripcion, "false", "SUSPENSO"));
+
+            }
+
         }
 
 
-    }
-
-    private void cargarPeliculas () {
-
-        db.addPelicula(new Pelicula("Los Vengadores", "https://http2.mlstatic.com/posters-cine-avengers-endgame-marvel-peliculas-45x30-cm-D_NQ_NP_634696-MLA30089346405_042019-F.jpg", getString(R.string.descripcionVengadores)));
-        db.addPelicula(new Pelicula("Cisne Negro", "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/cisne-negro/7055592-1-esl-ES/CISNE-NEGRO.jpg?resize=480:*",getString(R.string.descripcionCisne)));
-        db.addPelicula(new Pelicula("Alien", "https://i.pinimg.com/originals/fd/82/c1/fd82c1116eb734b625552241e00e2a20.png",getString(R.string.descripcionAlien)));
-        db.addPelicula(new Pelicula("Robin Hood", "https://i.blogs.es/873d60/espinof-peores-posters-de-cine-2018-robin-hood/450_1000.jpg", getString(R.string.descripcionRobin)));
-        db.addPelicula(new Pelicula("Capitana Marvel", "https://i.pinimg.com/236x/0f/7f/68/0f7f68e4f067a45fa438290726c75c15.jpg",getString(R.string.descripcionCapitana) ));
-        db.addPelicula(new Pelicula("1917", "https://www.mundopeliculas.tv/wp-content/uploads/2020/01/Poster-1917.jpg", getString(R.string.descripcion1917)));
-        db.addPelicula(new Pelicula("El Guason", "https://cdn.shopify.com/s/files/1/0265/2769/4934/products/joker-2019-poster-4_195x195@2x.jpg?v=1570682268", getString(R.string.descripcionGuason)));
     }
 
     public interface MenuPrincipalFragmentListener {
